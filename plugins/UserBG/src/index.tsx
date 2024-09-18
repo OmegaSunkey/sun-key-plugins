@@ -33,7 +33,7 @@ export const onLoad = async () => {
 
     unpatch = after("getUserBannerURL", getUserBannerURL, ([user]) => {
         const customBanner = data?.find((i: userBGData) => i.uid === user?.id)
-        if (user?.banner === undefined && customBanner) return customBanner.img
+        if (user?.banner === undefined && customBanner) return "https://usrbg.is-hardly.online/usrbg/v2/" + user?.id
     })
 }
 
